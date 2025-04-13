@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SkillShare Auth</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+</head>
+<body>
+
+  <div class="hamburger" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <nav class="navbar">
+    <div class="logo">
+        <h1>SkillShare</h1>
+    </div>
+    <div class="nav-buttons" id="navMenu">
+        <input type="text" id="searchBar" placeholder="Search tips..." onkeyup="searchTips()" />
+        <button class="login" id="open-login">Login</button>
+        <button class="signup" id="open-signup">Sign Up</button>
+    </div>
+</nav>
+
+
+  <!-- Login Modal -->
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('loginModal')">&times;</span>
+      <h2>Login</h2>
+      <input type="email" id="loginEmail" placeholder="Email" />
+      <input type="password" id="loginPassword" placeholder="Password" />
+      <button id="signin">Login</button>
+    </div>
+  </div>
+
+  <!-- Signup Modal -->
+  <div id="signupModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('signupModal')">&times;</span>
+      <h2>Sign Up</h2>
+      <input type="email" id="signupEmail" placeholder="Email" />
+      <input type="password" id="signupPassword" placeholder="Password" />
+      <button id="signup">Sign Up</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <center><h2>Add a Tip</h2></center>
+    <form id="tipForm">
+      <input type="text" id="title" placeholder="Title" required />
+      <textarea id="description" placeholder="Description" required></textarea>
+      <input type="text" id="category" placeholder="Category (e.g., Coding, Design)" required />
+      <button type="submit">Submit</button>
+    </form>
+
+    <center>
+      <h2>Browse Tips</h2>
+      <div id="tipsContainer" class="tips-container">
+        <!-- Example tip cards -->
+        <div class="tip-card">
+          <h3>How to learn JavaScript</h3>
+          <p>Learn the basics of JavaScript to enhance your web development skills.</p>
+        </div>
+        <div class="tip-card">
+          <h3>Design Principles</h3>
+          <p>Understand the core design principles to create beautiful websites.</p>
+        </div>
+      </div>
+    </center>
+  </div>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
